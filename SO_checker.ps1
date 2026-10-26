@@ -1,3 +1,6 @@
+# Lists running SYSTEM services outside the Windows folder
+# PE - Server Operators SeBackupPrivilege
+
 $windowsPath = '^\s*"?' + [regex]::Escape($env:SystemRoot) + '\\'
 
 Get-CimInstance Win32_Service |
@@ -9,6 +12,6 @@ Where-Object {
     $_.PathName -notmatch '^\s*"?(%SystemRoot%|%windir%|\\SystemRoot)\\'
 } |
 Select-Object Name,
-    @{Name='Poziom'; Expression={'LocalSystem (SYSTEM)'}},
+    @{Name='Privilege Level'; Expression={'LocalSystem (SYSTEM)'}},
     PathName |
 Format-Table -AutoSize -Wrap
