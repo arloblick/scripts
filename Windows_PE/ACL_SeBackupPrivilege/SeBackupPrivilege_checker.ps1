@@ -1,4 +1,4 @@
-# aLists running SYSTEM services outside the Windows folder.
+# Lists running SYSTEM services outside the Windows folder.
 # Privilege escalation - Server Operators / SeBackupPrivilege.
 # Default: only Running services, if you want see Running and Stopped change:
 # remove line 11: $_.State -eq 'Running' -and
