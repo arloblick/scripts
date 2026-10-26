@@ -1,8 +1,13 @@
-# Lists running SYSTEM services outside the Windows folder.
-# Privilege escalation - Server Operators / SeBackupPrivilege.
-# Default: only Running services, if you want see Running and Stopped change:
-# remove line 11: $_.State -eq 'Running' -and
-# update line 17: Select-Object Name, State,
+<#
+Description: Lists running SYSTEM services outside the Windows folder.
+Privilege escalation - Server Operators / SeBackupPrivilege.
+Default: only Running services, if you want see Running and Stopped change:
+remove line 11: $_.State -eq 'Running' -and
+update line 17: Select-Object Name, State,
+
+Author:      Grzegorz Chojnowski / ArloBlick
+GitHub:      https://github.com/arloblick
+#>
 
 $windowsPath = '^\s*"?' + [regex]::Escape($env:SystemRoot) + '\\'
 
