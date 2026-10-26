@@ -1,4 +1,3 @@
-BBB
 $windowsPath = '^\s*"?' + [regex]::Escape($env:SystemRoot) + '\\'
 
 Get-CimInstance Win32_Service |
